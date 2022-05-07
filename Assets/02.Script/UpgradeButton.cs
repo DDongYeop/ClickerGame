@@ -26,9 +26,7 @@ public class UpgradeButton : MonoBehaviour
 
     void Start()
     {
-        currentCost = startCurrentCost;
-        level = 1;
-        goldByUpgrade = startGoldByUpgrade;
+        DataController.GetInstance().LoadUpgradeButton(this);
         UpdataUI();
     }
 
@@ -42,6 +40,7 @@ public class UpgradeButton : MonoBehaviour
 
             UpdateUpgrade();
             UpdataUI();
+            DataController.GetInstance().SaveUpgradeButton(this);
         }
     }
 

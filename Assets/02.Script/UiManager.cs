@@ -7,12 +7,14 @@ public class UiManager : MonoBehaviour
 {
     public Text goldDisPlayer;
     public Text goldPerClickDisPlayer;
-    public DataController dataController;
+
+    public Text goldPerSecDisplayer;
 
     void Update()
     {
-        goldDisPlayer.text = "GOLD : " + dataController.GetGold();
-        goldPerClickDisPlayer.text = "GOLD PER CLICK : " + dataController.GetGoldPerClick();
+        goldDisPlayer.text = "GOLD : " + DataController.GetInstance().GetGold();
+        goldPerClickDisPlayer.text = "GOLD PER CLICK : " + DataController.GetInstance().GetGoldPerClick();
+        goldPerSecDisplayer.text = "GOLD PER SEC : " + DataController.GetInstance().GetGoldPerSec();
     }
 
 }
